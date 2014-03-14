@@ -1,13 +1,20 @@
 package br.com.pontoclass.traveller.main;
 
+import br.com.pontoclass.traveller.Answer;
+import br.com.pontoclass.traveller.Route;
+import br.com.pontoclass.traveller.Solver;
+import br.com.pontoclass.traveller.builder.SolverBuilder;
+import br.com.pontoclass.traveller.exception.TravellerSalesmanException;
+
 public class Solve {
 	public static void main(String[] args) {
 		Solver solver = SolverBuilder.createBuilder().withMapping(args).build();
 		boolean fail = false;
+		Answer answer = null;
 		try {
-			Answer answer = solver.solve();
+			answer = solver.solve();
 		} catch (TravellerSalesmanException e) {
-			String explaination = e.getExplaination();
+			String explanation = e.getExplanation();
 			fail = true;
 		}
 		if(fail) {
