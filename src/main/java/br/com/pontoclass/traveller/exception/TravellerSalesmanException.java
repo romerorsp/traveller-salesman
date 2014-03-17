@@ -19,9 +19,4 @@ public class TravellerSalesmanException extends Exception {
 	public TravellerSalesmanException(String message, Throwable cause) {
 		super(message, cause);
 	}
-
-	public String getExplanation() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

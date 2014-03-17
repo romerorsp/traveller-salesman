@@ -1,28 +1,25 @@
 package br.com.pontoclass.traveller.builder;
 
-import java.math.BigDecimal;
-
-import br.com.pontoclass.traveller.Solver;
+import br.com.pontoclass.traveller.exception.TravellerSalesmanException;
+import br.com.pontoclass.traveller.solving.Solver;
+import br.com.pontoclass.traveller.solving.SquaredMatrixMapping;
+import br.com.pontoclass.traveller.solving.TravellerSalesmanMaestro;
 
 public class SolverBuilder {
-	private BigDecimal[][] mapping;
+	private SquaredMatrixMapping mapping;
 
 	private SolverBuilder() {}
 
 	public static SolverBuilder createBuilder() {
-		// TODO Auto-generated method stub
-		return null;
+		return new SolverBuilder();
 	}
 
-	public SolverBuilder withMapping(String... args) {
-		this.mapping = MatrixMappingExtractor.singleton().extract(args);
+	public SolverBuilder withMapping(String... args) throws TravellerSalesmanException {
+		this.mapping = SquaredMatrixMappingExtractor.singleton().extract(args);
 		return this;
 	}
 
 	public Solver build() {
-		// TODO Auto-generated method stub
-		return null;
+		return new TravellerSalesmanMaestro(mapping);
 	};
-	
-	
 }
