@@ -1,0 +1,39 @@
+<assembly>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>target/config</directory>
+			<outputDirectory>${deploy.dir}/config</outputDirectory>
+		</fileSet>
+		<fileSet>
+            <directory>target/etc</directory>
+            <outputDirectory>etc/cron.d</outputDirectory>
+        </fileSet>
+<!-- 		<fileSet> -->
+<!--             <directory>target</directory> -->
+<!--             <outputDirectory>${deploy.dir}/lib</outputDirectory> -->
+<!--             <includes> -->
+<!-- 				<include>travesman.jar</include> -->
+<!-- 			</includes> -->
+<!-- 			<fileMode>0777</fileMode> -->
+<!-- 			<lineEnding>unix</lineEnding> -->
+<!--         </fileSet> -->
+		<fileSet>
+			<directory>target/classes/script</directory>
+			<outputDirectory>${deploy.dir}</outputDirectory>
+			<includes>
+				<include>travesman</include>
+			</includes>
+			<fileMode>0777</fileMode>
+			<lineEnding>unix</lineEnding>
+		</fileSet>
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>${deploy.dir}/lib</outputDirectory>
+		</dependencySet>
+	</dependencySets>
+</assembly>
