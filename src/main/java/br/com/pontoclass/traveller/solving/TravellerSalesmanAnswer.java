@@ -14,11 +14,13 @@ public class TravellerSalesmanAnswer implements Answer {
 		this.tried = tried;
 	}
 	
-	@Override public Route getBestRoute() {
+	@Override
+	public Route getBestRoute() {
 		return best;
 	}
 
-	@Override public Route[] getTriedRoutes() {
+	@Override
+	public Route[] getTriedRoutes() {
 		return tried.toArray(new Route[]{});
 	}
 }
